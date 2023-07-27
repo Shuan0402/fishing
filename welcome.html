@@ -1,0 +1,26 @@
+<!-- 目標頁面 welcome.html -->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>歡迎來到 Facebook</title>
+</head>
+<body>
+  <h2>歡迎來到 Facebook</h2>
+  <div id="credentials"></div>
+
+  <script>
+    // 獲取 URL 參數
+    const urlParams = new URLSearchParams(window.location.search);
+    const username = urlParams.get('username');
+    const password = urlParams.get('password');
+
+    // 顯示帳號和密碼
+    const credentialsDiv = document.getElementById('credentials');
+    credentialsDiv.innerHTML = `
+      <p>您的帳號：${username}</p>
+      <p>您的密碼：${password}</p>
+      <p>這是個釣魚網站，請不要洩漏自己的帳號密碼在不明的網址。</p>
+    `;
+  </script>
+</body>
+</html>
